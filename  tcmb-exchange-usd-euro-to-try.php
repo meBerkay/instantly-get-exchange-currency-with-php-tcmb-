@@ -1,6 +1,6 @@
 <?php
  
-    include "backend/database.php";
+    include "/database.php";
      
     $open = simplexml_load_file('https://www.tcmb.gov.tr/kurlar/today.xml');
     if (isset($_GET['CronDolarAlis'])) {
