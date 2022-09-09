@@ -3,7 +3,7 @@
     include "/database.php";
      
     $open = simplexml_load_file('https://www.tcmb.gov.tr/kurlar/today.xml');
-    if (isset($_GET['CronDolarAlis'])) {
+    if (isset($_GET['CronDolarAl'])) {
       $usd_al = $open->Currency[0]->BanknoteBuying;
       $usd_sat = $open->Currency[0]->BanknoteSelling;
       //echo $usd_al;
@@ -14,7 +14,7 @@
           echo "Veri çekme işlemi yapılamadı!";
       }
     }
-    if (isset($_GET['CronDolarSatis'])) {
+    if (isset($_GET['CronDolarSat'])) {
       $usd_al = $open->Currency[0]->BanknoteBuying;
       $usd_sat = $open->Currency[0]->BanknoteSelling;-
       if ($usd_sat) {
@@ -24,7 +24,7 @@
           echo "Bir hata var, kontrol etmelisin.!";
       }
     }
-    if (isset($_GET['CronEuroAlis'])) {
+    if (isset($_GET['CronEuroAl'])) {
  
       $euro_al = $open->Currency[11]->BanknoteBuying;
       $euro_sat = $open->Currency[11]->BanknoteSelling;
@@ -35,7 +35,7 @@
           echo "Kaydetme işlemi gerçekleştirilemedi!";
       }
     }
-    if (isset($_GET['CronEuroSatis'])) {
+    if (isset($_GET['CronEuroSat'])) {
       $euro_al = $open->Currency[11]->BanknoteBuying;
       $euro_sat = $open->Currency[11]->BanknoteSelling;
       if ($euro_sat) {
