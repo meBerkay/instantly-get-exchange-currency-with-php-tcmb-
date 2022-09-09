@@ -1,12 +1,10 @@
 <?php
  
-    include "/database.php";
-     
+    include "/database.php";     
     $open = simplexml_load_file('https://www.tcmb.gov.tr/kurlar/today.xml');
     if (isset($_GET['CronDolarAl'])) {
       $usd_al = $open->Currency[0]->BanknoteBuying;
-      $usd_sat = $open->Currency[0]->BanknoteSelling;
-      //echo $usd_al;
+      $usd_sat = $open->Currency[0]->BanknoteSelling;      
       if ($usd_al) {
         echo "Veri tabanına kur bilgileri güncellendi. Cron işlemi başarılı !";
       }
@@ -44,6 +42,5 @@
       else {
           echo "Veritabanına kur verileri çekilirken hata yaşandı. Kontrol edin!";
       }
-    }
- 
+    } 
 ?>
